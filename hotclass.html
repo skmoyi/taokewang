@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery.js"></script>
+<style>
+/*topnav*/
+body{position:relative; margin:0; padding:0;}
+*{ font-size:12px; font-family:"微软雅黑"; color:#666; padding:0; margin:0; text-decoration:none;}
+.clearfix{ clear:both;}
+.sky{ position:absolute; margin-left:50%; left:-640px; width:1280px;}
+ul,ol,dl,li,dd,dt{ padding:0; margin:0; list-style:none;}
+h1,h2,h3{ font-weight:normal; margin:0; padding:0;}
+
+/*topnav*/
+.topnav{ width:1280px; height:114px; margin:0 auto; position:relative;}
+.logo{ position:absolute; left:149px; top:18px;}
+.left{ border-bottom:#666 solid 1px; width:125px; float:left; margin-top:90px;}
+.right{ border-bottom:#666 solid 1px; width:125px; margin-top:90px; float:right;}
+.topright{ float:right; margin-top:15px; margin-right:25px;}
+.topright a{ margin:0 7px;}
+.topright a:hover{ color:red; text-decoration:underline;}
+.topunder{ float:right; margin-top:40px; margin-right:-88px; margin-bottom:6px}
+.tele{ color:red; font-size:19px;}
+.title{ float:left; margin-top:10px; margin-left:auto; margin-right:auto; margin-top:10px; }
+.title li{ list-style:none; float:left;}
+.title li a:hover{ color:red;}
+.title a{ padding:0 33px;}
+.dot{ background-image:url(images/disc.png); background-repeat:no-repeat; background-position:1px center;}
+
+/*banner*/
+.banner{ margin:0 auto; position:relative;}
+.banner .pic1{ display:block;}
+.banner .pic2{ position:absolute; bottom:0; left:0;}
+
+/*content*/
+.content .rightbox{ float:left;}
+.content .leftbox{ float:left;}
+.content .column1{ margin-top:50px; margin-left:140px;}
+.content .list1{ padding:5px 20px 35px 20px; width:160px; background-color:#e5e5e5;}
+.content .list1 li{ padding:15px 10px 10px 10px; border-bottom:1px solid #b2b2b2;}
+.content .list1 a{ font-size:14px; color:#dc2f31;}
+.content .list1 a:hover{ color:white;}
+
+.content .column2{ margin-top:30px; margin-left:140px; width:200px;}
+.content .list2{ padding:18px 23px 23px 30px; background-color:#e5e5e5;}
+.content .list2 a{ font-size:11px; color:#666; line-height:25px;}
+.content .list2 a:hover{ color:#dc2f31;}
+
+.content .column3{ background-color:#e5e5e5; width:200px; margin-top:30px; margin-left:140px;}
+.column3 .pic1 .toppic1{ margin-top:20px; margin-left:20px;}
+.column3 a{ margin-top:10px; margin-left:75px; font-size:12px; letter-spacing:5px; display:block; }
+.column3 a:hover{color:#dc2f31; text-decoration:underline;}
+.column3 .pic2 .toppic2{ margin-top:20px; margin-left:20px;}
+.column3 .pic3 .toppic3{ margin-top:20px; margin-left:20px;}
+.column3 .pic3 a{ display:block; padding-bottom:22px;}
+
+.content .rightbox{ margin-top:50px; margin-left:50px;}
+.content .topone{ position:relative;}
+.content .rightpic1{ position:absolute; top:0; left:0;}
+.content .rightpic2{ float:left; margin-left:55px; display:block; margin-bottom:30px;}
+.content .rightside{ float:left;}
+.upperfont{ font-size:16px; margin-top:15px; margin-left:50px; display:block; margin-bottom:16px; }
+.content .rightbox p{ line-height:20px; margin-left:50px;}
+.lowerfont{ margin-top:12px; margin-left:50px; display:block; }
+.content .dashed{ position:absolute; left:0; bottom:0;}
+.content .upperfont:hover{ color:#dc2f31; text-decoration:underline;}
+.content .lowerfont:hover{ color:#dc2f31; text-decoration:underline;}
+
+.content .toptwo,.content .topthree,.content .topfour,.content .topfive{ position:relative; margin-top:30px;}
+
+.content .codeline li{float:left; margin:0 2px;}
+.content .codeline .border a{ display:block; border:1px solid #ccc; padding:3px 8px; margin:0 2px;}
+.content .codeline .border a:hover{ color:white; background-color:rgba(255,0,4,1); border:1px solid red;}
+.content .normal{ font-size:14px; line-height:20px; display:block; padding:0 10px; border-radius:5px;}
+.content .normal:hover{ color:white; background-color:rgba(255,0,4,1);}
+.content .down{ padding-top:3px;}
+
+/*footer*/
+.footer{ height:450px; width:1280px; background-color:#2e2e2e; background-image:url(images/footerbottom.png); background-position:bottom; background-repeat:no-repeat;}
+.footer .leftbox{ float:left; margin-top:50px; margin-left:210px;}
+.btn1{ width:434px; height:40px; font-size:14px; color:#808080; background-color:#4c4c4c; border:none; padding-left:16px; display:block; margin:2px 0;}
+.btn5{ height:40px; background-color:#e03b39; width:450px; color:white; font-size:14px;}
+
+.footer .rightbox{ float:left; margin-left:48px; margin-top:70px;}
+.footer .insidebox{ margin-top:23px;}
+.footer .add{ background-image:url(images/footermap.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc;}
+.footer .tel{ background-image:url(images/footertel.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .fax{ background-image:url(images/footeremail.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .picbox{ clear:both; margin-top:30px;}
+.footer .picbox img{  margin-right:16px; float:left;}
+
+.insidepicbg{ float:left; position:relative;}
+.insidepicbg div{ background-color:rgba(255,0,4,0.3); height:150px; width:220px; position:absolute; left:55px;; top:1px;}
+
+.column3 .pic1,.column3 .pic2,.column3 .pic3{ position:relative;}
+span{ display:block; height:110px;width:160px; position:absolute; top:20px; left:20px;}
+span div{height:110px;width:160px; background-color:rgba(255,0,4,0.3); }
+</style>
+</head>
+
+<body>
+<script>
+document.title="内训课程"
+</script>
+<div class="sky">
+    <div class="topnav">
+        <a href="index.html"><img class="logo" src="images/logo.png"></a>
+        <b class="left"></b><b class="right"></b>
+        <div class="topright"><a href="#">中文</a><a>|</a><a href="#">EN</a></div>
+        <div class="topunder"><a>服务热线：</a><a class="tele">021-51061698</a></div>
+        <ul class="title">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a class="dot" href="openingclass.html">公开课程</a></li>
+            <li><a class="dot" href="#">内训课程</a></li>
+            <li><a class="dot" href="#">视频教程</a></li>
+            <li><a class="dot" href="#">培训讲师</a></li>
+            <li><a class="dot" href="#">培训机构</a></li>
+            <li><a class="dot" href="#">培训场地</a></li>
+            <li><a class="dot" href="#">资料下载</a></li>
+            <li><a class="dot" href="#">网站首页</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+    	<img class="pic1" src="images/bannerpic2.png">
+      <img class="pic2" src="images/bannerpic2-bottom.png">
+    </div>
+    <div class="content">
+    	  <div class="leftbox">
+        	<div class="column1">
+            	<img src="images/hotclass.png" style="display:block;">
+                <ul class="list1">
+                	<li><a href="#">90后员工管理</a></li>
+                    <li><a href="#">PPT高级制作技巧</a></li>
+                    <li><a href="#">连锁实体企业的O2O</a></li>
+                </ul>
+            </div>
+          <div class="column2">
+            	<img src="images/openingclass.png" style="display:block;">
+                <ul class="list2">
+                	<li><a href="#">武汉哪里有企业管理培训...</a></li>
+                    <li><a href="#">上海 MS Proje...</a></li>
+                    <li><a href="#">TTT-内部培训师培训</a></li>
+                    <li><a href="#">唐东方：如何制定年度经...</a></li>
+                    <li><a href="#">清华大学资本运营与投融...</a></li>
+                    <li><a href="#">上海 Microsof...</a></li>
+                    <li><a href="#">上海 Microsof...</a></li>
+                </ul>
+            </div>
+          <div class="column3">
+            	<img src="images/teachers.png" style="display:block; padding-bottom:10px;">
+                <div class="pic1">
+                	<span><div></div></span>
+                	<img class="toppic1" src="images/qiubosen.png">
+                    <a href="#">邱博森</a>
+                </div>
+                <div class="pic2">
+                	<span><div></div></span>
+                	<img class="toppic2" src="images/sunhanqing2.png">
+                    <a href="#">孙汉卿</a>
+                </div>
+                <div class="pic3">
+                	<span><div></div></span>
+                	<img class="toppic3" src="images/wangpengrui.png">
+                    <a href="#">王鹏瑞</a>
+                </div>
+          </div>
+          <script>
+			      $(".content .leftbox span div").hide()
+			      $(".content .leftbox span").mouseenter(function(){
+				    $(this).children("div").show()
+				    }).mouseleave(function(){
+					  $(this).children("div").hide()
+					  })
+			     </script>
+        </div>
+        <div class="rightbox">
+ 			      <div class="topone">
+            	<div class="insidepicbg">
+                	<div></div>
+                    <img class="rightpic1" src="images/20160606.png">
+                    <img class="rightpic2" src="images/520.png">
+                </div>
+                <div class="rightside">
+                    <a class="upperfont" href="#">快说一句520 宝宝喊你来领奖 | 庆培训宝用户突破520万</a>
+                    <p>培训宝，懂你的培训管理系统，TA辅助你组织培训，报名、签到、考试、评估，</br>仅一张二维码，省却你统计的烦恼；TA 开拓你的视野，移动学习、翻转课堂，</br>做一个与时俱进的管理者；TA 预见你所想而不能，学习分析……</p>
+                    <a class="lowerfont" href="#">more >></a>
+                </div>
+                <img class="dashed" src="images/dashed.png">
+                <div class="clearfix"></div>
+            </div>
+            <div class="toptwo">
+            	<div class="insidepicbg">
+                	<div></div>
+                    <img class="rightpic1" src="images/20160605.png">
+                    <img class="rightpic2" src="images/summer.png">
+                </div>
+                <div class="rightside">
+                    <a class="upperfont" href="#">这个夏天 让我们相约去学习</a>
+                    <p>TTM，国内最专注为培训经理定制的国家授证系列课程！培训经理学习投资的第</br>一选择！最前沿、热门的内容：培训执行、培训需求分析与计划制定，培训项目</br>设计与管理，内训师团队建设，课程设计与开发，课程体系规划......</p>
+                    <a class="lowerfont" href="#">more >></a>
+                </div>
+                <img class="dashed" src="images/dashed.png">
+                <div class="clearfix"></div>
+            </div>
+            <div class="topthree">
+            	<div class="insidepicbg">
+                	<div></div>
+                    <img class="rightpic1" src="images/20160604.png">
+                    <img class="rightpic2" src="images/stories.png">
+                </div>
+                <div class="rightside">
+                    <a class="upperfont" href="#">如何像TED那样讲故事</a>
+                    <p>TED的出现改变了主题演讲艺术。目前，TED演讲节目在线观看量已达到每天两</br>百万次。当提到高质量的公众演讲，你脑海中很可能在第一时间浮现TED的经典</br>舞台。那么，如何做一个TED水平的演讲？</p>
+                    <a class="lowerfont" href="#">more >></a>
+                </div>
+                <img class="dashed" src="images/dashed.png">
+                <div class="clearfix"></div>
+            </div>
+            <div class="topfour">
+            	<div class="insidepicbg">
+                	<div></div>
+                    <img class="rightpic1" src="images/20160603.png">
+                    <img class="rightpic2" src="images/college.png">
+                </div>
+                <div class="rightside">
+                    <a class="upperfont" href="#">培训人掌上学院开学啦!</a>
+                    <p>培训人掌上学院是什么？一个为培训管理者量身定制的移动学习方法。 以解决</br>问题的任务情境为导向；以培训人一年的典型任务情境为体系；以国内领先先进</br>的互联网培训管理系统工具（培训宝）为移动学习平台…</p>
+                    <a class="lowerfont" href="#">more >></a>
+                </div>
+                <img class="dashed" src="images/dashed.png">
+                <div class="clearfix"></div>
+            </div>
+            <div class="topfive">
+            	<div class="insidepicbg">
+                	<div></div>
+                    <img class="rightpic1" src="images/20160602.png">
+                    <img class="rightpic2" src="images/guide.png">
+                </div>
+                <div class="rightside">
+                    <a class="upperfont" href="#">培训人读书指南，超实用！内附推荐书单</a>
+                    <p>笔者一直呼吁，作为培训管理者，应该多读书，优秀的培训管理者应该是一个“</br>书虫”！为何呢？因为基于阅读，可以对培训管理者的个人成长和组织学习的经</br>营工作带来很多的启发和帮助；阅读是企业培训管理者工作内容的基石……</p>
+                    <a class="lowerfont" href="#">more >></a>
+                </div>
+                <img class="dashed" src="images/dashed.png">
+                <div class="clearfix"></div>
+            </div>
+            <ul class="codeline" style="margin-top:90px; margin-left:220px; margin-bottom:145px;">
+            	<li class="down"><a class="normal" href="#">首页</a></li>
+                <li class="down"><a class="normal" href="#">上一页</a></li>
+                <li class="border"><a href="#">1</a></li>
+                <li class="border"><a href="#">2</a></li>
+                <li class="border"><a href="#">3</a></li>
+                <li class="down"><a class="normal" href="#">下一页</a></li>
+                <li class="down"><a class="normal" href="#">尾页</a></li><div class="clearfix"></div>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <script>
+	$(".content .insidepicbg div").hide()
+	$(".content .insidepicbg").mouseenter(function(){
+		$(this).children("div").show()
+		}).mouseleave(function(){
+			$(this).children("div").hide()
+			})
+	</script>
+    <div class="footer">
+    	   <div class="leftbox">
+            <input class="btn1" type="text" value="您的姓名：">
+            <input class="btn1" type="text" value="您的电话：">
+            <input class="btn1" type="text" value="您的邮箱：">
+            <textarea style="height:135px; width:448px; display:block; margin-bottom:3px;"></textarea>
+            <input class="btn5" type="submit" value="提交">
+        </div>
+        <div class="rightbox" >
+        	<img src="images/logo-white.png">
+            <ul class="insidebox">
+            	<li class="add">地址：上海市徐汇区宜山路889号齐来大厦6楼 邮编：200233</li>
+                <li class="tel">电话：+021-51061698</li>
+                <li class="fax">电话：+021-51061698</li>
+            </ul>
+            <div class="picbox">
+            	<img src="images/footerQQ.png">
+                <img src="images/footerwechat.png">
+                <img src="images/footerzone.png">
+                <img src="images/footerrenren.png">
+                <img src="images/footerdouban.png">
+                <img src="images/footersina.png">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>

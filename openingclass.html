@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery.js"></script>
+<style>
+/*topnav*/
+body{position:relative; margin:0;}
+*{ font-size:12px; font-family:"微软雅黑"; color:#666; padding:0; margin:0; text-decoration:none;}
+.clearfix{ clear:both;}
+.sky{ position:absolute; margin-left:50%; left:-640px; width:1280px;}
+ul,ol,dl,li,dd,dt{padding:0; margin:0; list-style:none;}
+h1,h2,h3{ font-weight:normal; margin:0; padding:0;}
+
+/*topnav*/
+.topnav{ width:1280px; height:114px; margin:0 auto; position:relative;}
+.logo{ position:absolute; left:149px; top:18px;}
+.left{ border-bottom:#666 solid 1px; width:125px; float:left; margin-top:90px;}
+.right{ border-bottom:#666 solid 1px; width:125px; margin-top:90px; float:right;}
+.topright{ float:right; margin-top:15px; margin-right:25px;}
+.topright a{ margin:0 7px;}
+.topright a:hover{ color:red; text-decoration:underline;}
+.topunder{ float:right; margin-top:40px; margin-right:-88px; margin-bottom:6px}
+.tele{ color:red; font-size:19px;}
+.title{ float:left; margin-top:10px; margin-left:auto; margin-right:auto; margin-top:10px; }
+.title li{ list-style:none; float:left;}
+.title li a:hover{ color:red;}
+.title a{ padding:0 33px;}
+.dot{ background-image:url(images/disc.png); background-repeat:no-repeat; background-position:1px center;}
+
+/*banner*/
+.banner{ margin:0 auto; position:relative;}
+.banner .pic1{ display:block;}
+.banner .pic2{ position:absolute; bottom:0; left:0;}
+
+/*content*/
+.content .rightbox{ float:right;}
+.content .leftbox{ float:left;}
+.content .column1{ margin-top:50px; margin-left:140px;}
+.content .list1{ padding:5px 20px 35px 20px; width:160px; background-color:#e5e5e5;}
+.content .list1 li{ padding:15px 10px 10px 10px; border-bottom:1px solid #b2b2b2;}
+.content .list1 a{ font-size:14px; color:#dc2f31;}
+.content .list1 a:hover{ color:white;}
+
+.content .column2{ margin-top:30px; margin-left:140px; width:200px;}
+.content .list2{ padding:18px 23px 23px 30px; background-color:#e5e5e5;}
+.content .list2 li{ padding-left:8px; background-image:url(images/content-left-2-square.png); background-repeat:no-repeat; background-position:left;}
+.content .list2 a{ font-size:11px; color:#666; line-height:25px;}
+.content .list2 a:hover{ color:#dc2f31;}
+
+.content .column3{ background-color:#e5e5e5; width:200px; margin-top:30px; margin-left:140px;}
+.column3 .pic1 .toppic1{ margin-top:20px; margin-left:20px;}
+.column3 .pic1 a{ margin-top:10px; margin-left:22px; font-size:12px; letter-spacing:1px; display:block;}
+.column3 .pic2 .toppic2{ margin-top:20px; margin-left:20px;}
+.column3 .pic2 a{ margin-top:10px; margin-left:22px; font-size:12px; display:block;}
+.column3 .pic3 .toppic3{ margin-top:20px; margin-left:20px;}
+.column3 .pic3 a{ margin-top:10px; margin-left:22px; padding-bottom:24px; font-size:12px; letter-spacing:1px; display:block;}
+.content .column3 a:hover{ color:#dc2f31; text-decoration:underline;}
+
+.content .topone{ width:750px; height:250px; background-color:#dc2f31; margin-right:140px; margin-top:50px; position:relative;}
+.content .topone img{ position:absolute; right:15px; top:15px;}
+.content .topone h1{ font-size:18px; color:white; padding-top:29px; padding-left:15px; padding-bottom:13px;}
+.content .topone h2{ padding-top:5px; padding-bottom:5px; padding-left:15px; color:white;}
+.content .topone a{ display:block; width:356px; color:white; margin-top:20px; margin-left:15px;}
+
+.content .toptwo{ width:750px; height:220px; position:relative; margin-top:33px;}
+.content .toptwo img{ position:absolute; right:0; top:0;}
+.content .toptwo h1{ font-size:18px; color:#333; padding-top:15px; padding-bottom:13px;}
+.content .toptwo h2{ padding-top:5px; padding-bottom:5px; color:#999;}
+.content .toptwo a{ display:block; width:356px; color:#666; margin-top:20px;}
+.content .toptwo .bottom{ color:#999;}
+
+.content .toptwo h1:hover{ color:#dc2f31; text-decoration:underline;}
+.content .toptwo a:hover{color:#dc2f31; text-decoration:underline;}
+.content .toptwo .bottom:hover{color:#dc2f31; text-decoration:underline;}
+
+.content .topthree{ width:750px; height:220px; position:relative; margin-top:33px;}
+.content .topthree img{ position:absolute; right:0; top:0;}
+.content .topthree h1{ font-size:18px; color:#333; padding-top:15px; padding-bottom:13px;}
+.content .topthree h2{ padding-top:5px; padding-bottom:5px; color:#999;}
+.content .topthree a{ display:block; width:356px; color:#666; margin-top:20px;}
+.content .topthree .bottom{ color:#999;}
+
+.content .topthree h1:hover{ color:#dc2f31; text-decoration:underline;}
+.content .topthree a:hover{color:#dc2f31; text-decoration:underline;}
+.content .topthree .bottom:hover{color:#dc2f31; text-decoration:underline;}
+
+.content .topfour{ width:750px; height:220px; position:relative; margin-top:33px;}
+.content .topfour img{ position:absolute; right:0; top:0;}
+.content .topfour h1{ font-size:18px; color:#333; padding-top:15px; padding-bottom:13px;}
+.content .topfour h2{ padding-top:5px; padding-bottom:5px; color:#999;}
+.content .topfour a{ display:block; width:356px; color:#666; margin-top:20px;}
+.content .topfour .bottom{ color:#999;}
+
+.content .topfour h1:hover{ color:#dc2f31; text-decoration:underline;}
+.content .topfour a:hover{color:#dc2f31; text-decoration:underline;}
+.content .topfour .bottom:hover{color:#dc2f31; text-decoration:underline;}
+
+.content .topfive{ width:750px; height:220px; position:relative; margin-top:33px; }
+.content .topfive img{ position:absolute; right:0; top:0;}
+.content .topfive h1{ font-size:18px; color:#333; padding-top:15px; padding-bottom:13px;}
+.content .topfive h2{ padding-top:5px; padding-bottom:5px; color:#999;}
+.content .topfive a{ display:block; width:356px; color:#666; margin-top:20px;}
+.content .topfive .bottom{ color:#999;}
+
+.content .topfive h1:hover{ color:#dc2f31; text-decoration:underline;}
+.content .topfive a:hover{color:#dc2f31; text-decoration:underline;}
+.content .topfive .bottom:hover{color:#dc2f31; text-decoration:underline;}
+
+.content .codeline li{float:left; margin:0 2px;}
+.content .codeline .border a{ display:block; border:1px solid #ccc; padding:3px 8px; margin:0 2px;}
+.content .codeline .border a:hover{ color:white; background-color:rgba(255,0,4,1); border:1px solid red;}
+.content .normal{ font-size:14px; line-height:20px; display:block; padding:0 10px; border-radius:5px;}
+.content .normal:hover{ color:white; background-color:rgba(255,0,4,1);}
+.content .down{ padding-top:3px;}
+
+/*footer*/
+.footer{ height:450px; width:1280px; background-color:#2e2e2e; background-image:url(images/footerbottom.png); background-position:bottom; background-repeat:no-repeat;}
+.footer .leftbox{ float:left; margin-top:50px; margin-left:210px;}
+.btn1{ width:434px; height:40px; font-size:14px; color:#808080; background-color:#4c4c4c; border:none; padding-left:16px; display:block; margin:2px 0;}
+.btn5{ height:40px; background-color:#e03b39; width:450px; color:white; font-size:14px;}
+
+.footer .rightbox{ float:left; margin-left:48px; margin-top:70px;}
+.footer .insidebox{ margin-top:23px;}
+.footer .add{ background-image:url(images/footermap.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc;}
+.footer .tel{ background-image:url(images/footertel.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .fax{ background-image:url(images/footeremail.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .picbox{ clear:both; margin-top:30px;}
+.footer .picbox img{  margin-right:16px; float:left;}
+
+.column3 .pic1,.column3 .pic2,.column3 .pic3{ position:relative;}
+
+.content .leftinside{ display:block; width:160px; height:110px; position:absolute; top:20px; left:20px;}
+.content .leftinside div{width:160px; height:110px; background-color:rgba(255,0,4,0.2); }
+
+.content .inside2{ width:320px; height:220px; position:absolute; top:0; right:0; z-index:5;}
+.content .inside2 span{ display:block; width:320px; height:220px; background-color:rgba(255,0,4,0.2);}
+</style>
+</head>
+
+<body>
+<script>
+document.title="公开课程"
+</script>
+<div class="sky">
+    <div class="topnav">
+        <a href="index.html"><img class="logo" src="images/logo.png"></a>
+        <b class="left"></b><b class="right"></b>
+        <div class="topright"><a href="#">中文</a><a>|</a><a href="#">EN</a></div>
+        <div class="topunder"><a>服务热线：</a><a class="tele">021-51061698</a></div>
+        <ul class="title">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a class="dot" href="#">公开课程</a></li>
+            <li><a class="dot" href="hotclass.html">内训课程</a></li>
+            <li><a class="dot" href="#">视频教程</a></li>
+            <li><a class="dot" href="#">培训讲师</a></li>
+            <li><a class="dot" href="#">培训机构</a></li>
+            <li><a class="dot" href="#">培训场地</a></li>
+            <li><a class="dot" href="#">资料下载</a></li>
+            <li><a class="dot" href="#">网站首页</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+    	<img class="pic1" src="images/bannerpic1.png">
+        <img class="pic2" src="images/bannerpic-bottom.png">
+    </div>
+    <div class="content">
+    	<div class="leftbox">
+        	<div class="column1">
+            	<img src="images/content-left-1.png" style="display:block;">
+                <ul class="list1">
+                	<li><a href="#">《用营销的思维做……</a></li>
+                    <li><a href="#">《个人移动互联网……</a></li>
+                    <li><a href="#">《做让员工尖叫的……</a></li>
+                </ul>
+            </div>
+            <div class="column2">
+            	<img src="images/content-left-2.png" style="display:block;">
+                <ul class="list2">
+                	<li><a href="#">销售管理　　　3555家></a></li>
+                    <li><a href="#">市场营销　　　3772家></a></li>
+                    <li><a href="#">培训发展　　　1581家></a></li>
+                    <li><a href="#">人力资源　　　5266家></a></li>
+                    <li><a href="#">生产管理　　　2490家></a></li>
+                    <li><a href="#">客户服务　　　1648家></a></li>
+                    <li><a href="#">职业技能　　　1084家></a></li>
+                </ul>
+            </div>
+            <div class="column3">
+            	<img src="images/content-left-3.png" style="display:block; margin-bottom:10px;">
+                <div class="pic1">
+                	<span class="leftinside"><div></div></span>
+                	<img class="toppic1" src="images/content-left-3pic1.png">
+                    <a href="#">杭州汉维咨询服务有限公司</a>
+                </div>
+                <div class="pic2">
+                	<span class="leftinside"><div></div></span>
+                	<img class="toppic2" src="images/content-left-3pic2.png">
+                    <a href="#">重庆青永飞文化传播有限公司</a>
+                </div>
+                <div class="pic3">
+                	<span class="leftinside"><div></div></span>
+                	<img class="toppic3" src="images/content-left-3pic3.png">
+                    <a href="#">武汉四季色彩形象设计学院</a>
+                </div>
+            </div>
+            <script>
+			$(".content .column3 .leftinside div").hide()
+			$(".content .column3 .leftinside").mouseenter(function(){
+				$(this).children("div").show()
+				}).mouseleave(function(){
+					$(this).children("div").hide()
+					})
+			</script>
+        </div>
+        <div class="rightbox">
+        	<div class="topone">
+            	<h1>北京鼎正方略企业管理顾问有限公司</h1>
+                <h2>课程：5 案例：59 视频：22 文章：84 课件：6</h2>
+                <h2>注册时间：2006-01-10，机构编号：1427</h2>
+                <a href="#">北京鼎正方略企业管理顾问有限公司是一家专注为企业管理领域和公共管理领域提供高品质咨询和培训服务的智业机构。公司的工作目标是将当今最先进、 最高端、 最成熟的经营管理……</a>
+                <a href="#">more >></a>
+                <div class="inside1" style="height:220px;width:320px; position:absolute; top:15px; right:15px; z-index:10; ">
+               		<span style="display:block; height:220px; width:320px; background-color:rgba(255,0,4,0.2);"></span>
+                </div>
+                <img src="images/content-top1.png">
+            </div>
+            <script>
+			$(".content .topone .inside1 span").hide()
+			$(".content .topone .inside1").mouseenter(function(){
+				$(this).children("span").show()
+				}).mouseleave(function(){
+					$(this).children("span").hide()
+					})
+			</script>
+            <div class="toptwo">
+            	<a href=""><h1>众人行管理咨询机构</h1></a>
+                <h2>课程名：卓越领导力的提升</h2>
+                <h2>培训地点：广东 深圳市　　　培训时间：2009.10.26</h2>
+                <a href="#">业务内容：通用管理类培训</br>
+企业管理、经济管理、工商管理、金融培训等</br>
+主要包括：中层经理综合管理技能提升、从专业人才到管理……</br></a>
+                <a class="bottom" href="#">more >></a>
+                <img src="images/content-top2.png">
+                <div class="inside2"><span></span></div>
+            </div>
+            <div class="topthree">
+            	<a href=""><h1>上海复锐企业管理咨询有限公司</h1></a>
+                <h2>课程名：成功从优秀员工做起</h2>
+                <h2>培训地点：上海 上海市　　　培训时间：2016.03.24</h2>
+                <a href="#">复锐咨询团队以系统的专业训练 丰富的从业经验，独到的创新思</br>
+                维，精干的合作团队，至诚的服务理念 雄厚的支撑力量向客户提</br>
+                供------系统化、个性化、可操作的咨询方案与专业训练……</br></a>
+                <a class="bottom" href="#">more >></a>
+                <img src="images/content-top3.png">
+                <div class="inside2"><span></span></div>
+            </div>
+            <div class="topfour">
+            	<a href=""><h1>一六八培训网</h1></a>
+                <h2>课程名：基于图画心理学的面试官速成培训班</h2>
+                <h2>培训地点：广东 深圳市　　　培训时间：2014.06.22</h2>
+                <a href="#">一六八培训网依托强大的网络学习平台，以极大的热情，全力以赴</br>，推动管理者及组织走向成功的神圣使命，立足中国发展现状，博</br>采世界管理精华，利用现代最新科技，为管理者及其组织……</a>
+                <a class="bottom" href="#">more >></a>
+                <img src="images/content-top4.png">
+                <div class="inside2"><span></span></div>
+            </div>
+            <div class="topfive">
+            	<a href=""><h1>惠德培训学院(北京/上海/深圳）</h1></a>
+                <h2>课程名：360°客户关系管理</h2>
+                <h2>培训地点：上海 上海市　　　培训时间：2014.07.31</h2>
+                <a href="#">北京惠德培训学院成立于2004年，专注于电子商务、客户关系</br>管理（CRM）、企业资源管理规划（ERP）、供应链管理（SCM）</br>等信息化领域的培训和咨询服务，致力于为企业……</a>
+                <a class="bottom" href="#">more >></a>
+                <img src="images/content-top5.png">
+                <div class="inside2"><span></span></div>
+            </div>
+            <script>
+			$(".content .inside2 span").hide()
+			$(".content .inside2").mouseenter(function(){
+				$(this).children("span").show()
+				}).mouseleave(function(){
+					$(this).children("span").hide()
+					})
+			</script>
+            <ul class="codeline" style="margin-top:90px; margin-left:220px; margin-bottom:145px;">
+            	<li class="down"><a class="normal" href="#">首页</a></li>
+                <li class="down"><a class="normal" href="#">上一页</a></li>
+                <li class="border"><a href="#">1</a></li>
+                <li class="border"><a href="#">2</a></li>
+                <li class="border"><a href="#">3</a></li>
+                <li class="down"><a class="normal" href="#">下一页</a></li>
+                <li class="down"><a class="normal" href="#">尾页</a></li><div class="clearfix"></div>
+            </ul>
+        </div><div class="clearfix"></div>
+    </div>
+    <div class="footer">
+    	<div class="leftbox">
+            <input class="btn1" type="text" value="您的姓名：">
+            <input class="btn1" type="text" value="您的电话：">
+            <input class="btn1" type="text" value="您的邮箱：">
+            <textarea style="height:135px; width:448px; display:block; margin-bottom:3px;"></textarea>
+            <input class="btn5" type="submit" value="提交">
+        </div>
+        <div class="rightbox" >
+        	<img src="images/logo-white.png">
+            <ul class="insidebox">
+            	<li class="add">地址：上海市徐汇区宜山路889号齐来大厦6楼 邮编：200233</li>
+                <li class="tel">电话：+021-51061698</li>
+                <li class="fax">传真：+021-54012899</li>
+            </ul>
+            <div class="picbox">
+            	<img src="images/footerQQ.png">
+                <img src="images/footerwechat.png">
+                <img src="images/footerzone.png">
+                <img src="images/footerrenren.png">
+                <img src="images/footerdouban.png">
+                <img src="images/footersina.png">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>

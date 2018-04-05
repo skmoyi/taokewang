@@ -1,0 +1,604 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery.js"></script>
+<style>
+
+/*topnav*/
+body{position:relative; margin:0;}
+*{ font-size:12px; font-family:"微软雅黑";  padding:0; margin:0; text-decoration:none;}
+.clearfix{ clear:both;}
+.sky{ position:absolute; margin-left:50%; left:-640px; width:1280px;}
+ul,ol,dl,li,dd,dt{padding:0; margin:0; list-style:none;}
+h1{ font-weight:normal;}
+
+/*topnav*/
+.topnav{ width:1280px; height:114px; margin:0 auto; position:relative;}
+.topnav .topright a{ color:#666;}
+.logo{ position:absolute; left:149px; top:18px;}
+.left{ border-bottom:#666 solid 1px; width:125px; float:left; margin-top:90px;}
+.right{ border-bottom:#666 solid 1px; width:125px; margin-top:90px; float:right;}
+.topright{ float:right; margin-top:15px; margin-right:25px;}
+.topright a{ margin:0 7px;}
+.topright a:hover{ color:red; text-decoration:underline;}
+.topunder{ float:right; margin-top:40px; margin-right:-88px; margin-bottom:6px}
+.tele{ color:red; font-size:19px;}
+.title{ list-style:none; float:left; margin-top:10px; margin-left:auto; margin-right:auto; margin-top:10px;}
+.title li{  float:left;}
+.title li a:hover{ color:red;}
+.title a{ padding:0 33px;  color:#666; }
+.dot{ background-image:url(images/disc.png); background-repeat:no-repeat; background-position:1px center;}
+
+/*banner*/
+.banner{ width:1280px; height:400px; margin:0 auto; position:relative;}
+.banner .current{ background-color:#dc231d;}
+.banner .btn{ position:absolute; width:288px; top:380px; left:498px;}
+.banner li{padding:3px 30px; margin:0 18px; float:left; background-color:#757575;}
+
+/*partB*/
+.partB{ width:1280px; height:675px; position:relative;}
+.partB .toppic{margin-top:50px; margin-left:500px;}
+.partB .leftcolumn{ float:left; margin-top:25px; margin-left:195px; width:285px; height:385px; margin-right:18px;}
+.partB .leftcolumn .top{ width:285px; height:195px; float:left; position:relative;}
+.partB .leftcolumn .middleline1{ float:left;}
+.partB .leftcolumn dl{clear:left;}
+.partB .leftcolumn .dt1{ color:#df3a38; font-size:20px; padding-left:89px; padding-top:10px; padding-bottom:5px;}
+.partB .leftcolumn .dt2 a{ color:#4c4c4c; padding-left:117px;}
+.partB .leftcolumn .dt2 a:hover{ color:red;text-decoration:underline;}
+.partB .leftcolumn dd{padding-left:15px; padding-top:6px; padding-bottom:6px;}
+.partB .leftcolumn dd a{ color:#4c4c4c;}
+.partB .leftcolumn dd a:hover{ color:red;text-decoration:underline;}
+
+.partB .middlecolumn{ float:left; margin-top:25px; width:285px; height:385px; margin-right:18px;}
+.partB .middlecolumn .top{ width:285px; height:195px; float:left; position:relative;}
+.partB .middlecolumn .middleline2{ float:left;}
+.partB .middlecolumn dl{clear:left;}
+.partB .middlecolumn .dt1{ color:#df3a38; font-size:20px; padding-left:89px; padding-top:10px; padding-bottom:5px;}
+.partB .middlecolumn ul{ margin-left:15px; float:left; margin-right:15px}
+.partB .middlecolumn ul li{ padding-top:6px; padding-bottom:6px;}
+.partB .middlecolumn ul li a{ color:#4c4c4c;}
+.partB .middlecolumn ul li a:hover{ color:red;text-decoration:underline;}
+.partB .middlecolumn .dt2 a{ color:#4c4c4c; font-size:12px; padding-left:117px;}
+.partB .middlecolumn .dt2 a:hover{ color:red;text-decoration:underline;}
+
+.partB .rightcolumn{ float:left; margin-top:25px; width:285px; height:385px; }
+.partB .rightcolumn .top{ width:285px; height:195px; float:left; position:relative;}
+.partB .rightcolumn .middleline2{ float:left;}
+.partB .rightcolumn dl{clear:left;}
+.partB .rightcolumn .dt1{ color:#df3a38; font-size:20px; padding-left:79px; padding-top:10px; padding-bottom:5px;}
+.partB .rightcolumn ul{float:left; margin-right:10px; }
+.partB .rightcolumn .one{ margin-left:15px;}
+.partB .rightcolumn ul li{ padding-top:6px; padding-bottom:6px;}
+.partB .rightcolumn ul li a{ color:#4c4c4c;}
+.partB .rightcolumn ul li a:hover{ color:red;text-decoration:underline;}
+.partB .rightcolumn .dt2 a{ color:#4c4c4c; font-size:12px; padding-left:117px;}
+.partB .rightcolumn .dt2 a:hover{ color:red;text-decoration:underline;}
+.partB .leftarrow{position:absolute; top:404px; left:116px;}
+.partB .rightarrow{position:absolute; top:404px; right:116px;}
+
+.show{ background-color:#e6e6e6;}
+/*partN*/
+.partN{ height:550px; width:1280px; background-color:#e03b39; position:relative;}
+.partN .toppic{ position:absolute; top:50px; left:560px;}
+.partN .person1{ margin-top:225px; margin-left:116px; margin-right:19px; float:left; position:relative;}
+.partN .person1 dl{ margin-top:30px;}
+.partN .person1 dl a{ color:white;}
+.partN .person1 dl a:hover{ text-decoration:underline;}
+.partN .person1 dl .liaodan{ padding-left:76px; padding-top:2px; padding-bottom:2px;}
+.partN .person1 dl .liaodan a{ font-size:16px;}
+.partN .person1 dl .liaodan a:hover{ text-decoration:underline;}
+.partN .person1 dl .p1{ padding-left:13px; padding-top:5px; padding-bottom:5px;}
+.partN .person1 dl .p2{ padding-left:52px; padding-top:5px; padding-bottom:5px;}
+
+.partN .person2{ margin:225px 19px 0 19px;float:left; position:relative;}
+.partN .person2 dl{ margin-top:30px;}
+.partN .person2 dl a{ color:white;}
+.partN .person2 dl a:hover{ text-decoration:underline;}
+.partN .person2 dl .dongyuchuan{ padding-left:66px; padding-top:2px; padding-bottom:2px;}
+.partN .person2 dl .dongyuchuan a{ font-size:16px;}
+.partN .person2 dl .dongyuchuan a:hover{ text-decoration:underline;}
+.partN .person2 dl .p1{ padding-left:53px; padding-top:5px; padding-bottom:5px;}
+.partN .person2 dl .p2{ padding-left:64px; padding-top:5px; padding-bottom:5px;}
+
+.partN .person3{ margin:225px 19px 0 19px;float:left; position:relative;}
+.partN .person3 dl{ margin-top:30px;}
+.partN .person3 dl a{ color:white;}
+.partN .person3 dl a:hover{ text-decoration:underline;}
+.partN .person3 dl .sunhanqing{ padding-left:65px; padding-top:2px; padding-bottom:2px;}
+.partN .person3 dl .sunhanqing a{ font-size:16px;}
+.partN .person3 dl .sunhanqing a:hover{ text-decoration:underline;}
+.partN .person3 dl .p1{ padding-left:53px; padding-top:5px; padding-bottom:5px;}
+.partN .person3 dl .p2{ padding-left:64px; padding-top:5px; padding-bottom:5px;}
+
+.partN .person4{ margin:225px 19px 0 19px;float:left; position:relative;}
+.partN .person4 dl{ margin-top:30px;}
+.partN .person4 dl a{ color:white;}
+.partN .person4 dl a:hover{ text-decoration:underline;}
+.partN .person4 dl .wangdebao{ padding-left:65px; padding-top:2px; padding-bottom:2px;}
+.partN .person4 dl .wangdebao a{ font-size:16px;}
+.partN .person4 dl .wangdebao a:hover{ text-decoration:underline;}
+.partN .person4 dl .p1{ padding-left:66px; padding-top:5px; padding-bottom:5px;}
+.partN .person4 dl .p2{ padding-left:53px; padding-top:5px; padding-bottom:5px;}
+
+.partN .person5{ margin:225px 19px 0 19px;float:left; position:relative;}
+.partN .person5 dl{ margin-top:30px;}
+.partN .person5 dl a{ color:white;}
+.partN .person5 dl a:hover{ text-decoration:underline;}
+.partN .person5 dl .lijiangtao{ padding-left:65px; padding-top:2px; padding-bottom:2px;}
+.partN .person5 dl .lijiangtao a{ font-size:16px;}
+.partN .person5 dl .lijiangtao a:hover{ text-decoration:underline;}
+.partN .person5 dl .p1{ padding-left:58px; padding-top:5px; padding-bottom:5px;}
+.partN .person5 dl .p2{ padding-left:58px; padding-top:5px; padding-bottom:5px;}
+
+.bg-circle{position:absolute; top:4px; left:4px;}
+/*partP*/
+.partP{ height:580px; width:1280px; position:relative;}
+.partP .toppic{ position:absolute; top:50px; left:560px;}
+.partP .column1{ float:left; margin-top:225px; margin-left:195px; height:295px; border-bottom:4px #808080 solid;}
+.partP dl{ margin-left:12px;}
+.partP dt{padding-top:8px; padding-bottom:8px;}
+.partP dd{padding-top:2px; padding-bottom:2px;}
+.partP .titlefont{font-size:16px; color:#e03b39;}
+.partP .boldfont{ color:#333; }
+.partP .normalfont{ color:#808080;}
+.partP h1{ padding-left:77px; padding-top:4px;}
+.partP a:hover{color:#e03b39;text-decoration:underline;}
+
+.partP .column2{ float:left; margin-top:225px; margin-left:17px; height:295px; border-top:4px #808080 solid;}
+.partP .column2 img{ margin-top:10px;}
+.partP .column3{ float:left; margin-top:225px; margin-left:17px; height:295px; border-bottom:4px #808080 solid;}
+.partP .column4{ float:left; margin-top:225px; margin-left:17px; height:295px; border-top:4px #808080 solid;}
+.partP .column4 img{ margin-top:10px;}
+
+/*partT*/
+.partT{ height:630px; width:1280px; background-color:#e03b39; position:relative;}
+.partT a{  color:#666; }
+.partT .toppic{ left:557px; top:50px; position:absolute;}
+.partT .group1{ float:left; margin-top:245px; margin-left:117px; background-image:url(images/partTpic1.png); background-repeat:no-repeat; width:243px; height:145px; background-color:white; padding-left:265px; position:relative;}
+.partT dl{ width:223px;}
+.partT .grouptitle{ padding-top:14px; padding-bottom:18px;}
+.partT .groupbottom{ padding:10px 0;}
+.partT .grouptitlefont1{ font-size:16px; color:#333;}
+.partT a:hover{ color:rgba(255,0,4,1);text-decoration:underline;}
+
+.partT .group2{ float:right; margin-top:245px; margin-right:116px; background-image:url(images/partTpic2.png); background-repeat:no-repeat; width:243px; height:145px; background-color:white; padding-left:265px; position:relative;}
+.partT .group3{ float:left; margin-top:23px; margin-left:117px; background-image:url(images/partTpic3.png); background-repeat:no-repeat; width:243px; height:145px; background-color:white; padding-left:265px; position:relative;}
+.partT .group4{ float:right; margin-top:23px; margin-right:116px; background-image:url(images/partTpic4.png); background-repeat:no-repeat; width:243px; height:145px; background-color:white; padding-left:265px; position:relative;}
+
+
+/*partC*/
+.partC{ height:360px; width:1280px; background-color:black; position:relative;}
+.partC .toppic{ position:absolute; top:50px; left:482px;}
+.partC ul{ position:absolute; bottom:50px; left:405px;}
+.partC li{ float:left;}
+.partC .tele{ color:white; font-size:27px; margin-top:17px;}
+.partC .tele1{ color:white; font-size:44px;}
+
+/*footer*/
+.footer{ height:450px; width:1280px; background-color:#2e2e2e; background-image:url(images/footerbottom.png); background-position:bottom; background-repeat:no-repeat;}
+.footer .leftbox{ float:left; margin-top:50px; margin-left:210px;}
+.btn1{ width:434px; height:40px; font-size:14px; color:#808080; background-color:#4c4c4c; border:none; padding-left:16px; display:block; margin:2px 0;}
+.btn5{ height:40px; background-color:#e03b39; width:450px; color:white; font-size:14px;}
+
+.footer .rightbox{ float:left; margin-left:48px; margin-top:70px;}
+.footer .insidebox{ margin-top:23px;}
+.footer .add{ background-image:url(images/footermap.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc;}
+.footer .tel{ background-image:url(images/footertel.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .fax{ background-image:url(images/footeremail.png); background-repeat:no-repeat; padding-left:31px; line-height:25px; color:#ccc; margin-top:15px;}
+.footer .picbox{ clear:both; margin-top:30px;}
+.footer .picbox img{  margin-right:16px; float:left;}
+
+/*span{ width:285px; height:195px; display:block; background-color:rgba(255,0,4,0.2); position:absolute; top:0; left:0;}*/
+.top1{ position:relative;}
+.redbg{width:210px; height:148px;  background-color:rgba(255,0,4,0.2); position:absolute;}
+.partT .top2{ position:absolute; top:0; left:0; height:145px; width:230px;}
+.partT .top2 .partttbg{ background-color:rgba(255,0,4,0.2); height:145px; width:230px; top:0; left:0; z-index:5;}
+
+</style>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+</head>
+
+<body>
+<script>
+document.title="淘课网首页"
+</script>
+<div class="sky">
+    <div class="topnav">
+        <a href="index.html"><img class="logo" src="images/logo.png"></a>
+        <b class="left"></b><b class="right"></b>
+        <div class="topright"><a href="#">中文</a><a>|</a><a href="#">EN</a></div>
+        <div class="topunder"><a>服务热线：</a><a class="tele">021-51061698</a></div>
+        <ul class="title">
+            <li><a href="#">网站首页</a></li>
+            <li><a class="dot" href="openingclass.html">公开课程</a></li>
+            <li><a class="dot" href="hotclass.html">内训课程</a></li>
+            <li><a class="dot" href="#">视频教程</a></li>
+            <li><a class="dot" href="#">培训讲师</a></li>
+            <li><a class="dot" href="#">培训机构</a></li>
+            <li><a class="dot" href="#">培训场地</a></li>
+            <li><a class="dot" href="#">资料下载</a></li>
+            <li><a class="dot" href="#">网站首页</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+		<div id="wowslider-container1">
+<div class="ws_images"><ul>
+		<li><img src="data1/images/1.png" alt="1" title="1" id="wows1_0"></li>
+		<li><img src="data1/images/2.png" alt="2" title="2" id="wows1_1"></li>
+		<li><img src="data1/images/3.png" alt="3" title="3" id="wows1_2"></li>
+
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title="1"></a>
+		<a href="#" title="2"></a>
+		<a href="#" title="3"></a>
+
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"></div>
+<div class="ws_shadow"></div>
+</div>
+<script type="text/javascript" src="engine1/wowslider.js"></script>
+<script type="text/javascript" src="engine1/script.js"></script>
+
+    </div>
+  	<div class="partB">
+        <img class="toppic" src="images/partB.png">
+        <div class="leftcolumn">
+            <div class="top">
+           		<span></span>
+                <img src="images/partB-pic1.png">
+            </div>
+            <img class="middleline1" src="images/middleline1.png">
+            <dl>
+                <dt class="dt1">最新公开课</dt>
+                <dd><a href="#">￥3500元 上海市HR应知会</a></dd>
+                <dd><a href="#">￥4680元养老、旅游、文创多维一体的地产产业</a></dd>
+                <dd><a href="#">￥9800元北京市第三届“情感教练”师资训练班</a></dd>
+                <dd><a href="#">￥4800元西安市组织业绩提升与人力资源...</a></dd>
+                <dt class="dt2"><a href="#">more>></a></dt>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+        <script>
+		$(".partB .leftcolumn").mouseenter(function(){
+			$(this).addClass("show").siblings("").removeClass("show")
+			}).mouseleave(function(){
+				$(this).removeClass("show")
+				})
+		</script>
+        <div class="middlecolumn">
+            <div class="top">
+            	<span></span>
+                <img src="images/partB-pic2.png">
+            </div>
+            <img class="middleline2" src="images/middleline2.png">
+            <dl>
+                <dt class="dt1">最新内训课</dt>
+            </dl>
+            <ul>
+                <li><a href="#">新员工入职培训</a></li>
+                <li><a href="#">新闻宣传</a></li>
+                <li><a href="#">PPT与Word的应用</a></li>
+                <li><a href="#">从技术走向管理</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">委托采购</a></li>
+                <li><a href="#">委托采购</a></li>
+                <li><a href="#">委托采购</a></li>
+                <li><a href="#">委托采购</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">海选中</a></li>
+                <li><a href="#">海选中</a></li>
+                <li><a href="#">海选中</a></li>
+                <li><a href="#">海选中</a></li>
+            </ul>
+            <dl>
+                <dt class="dt2"><a href="#">more>></a></dt>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+        <script>
+		$(".partB .middlecolumn").mouseenter(function(){
+			$(this).addClass("show").siblings("").removeClass("show")
+			}).mouseleave(function(){
+				$(this).removeClass("show")
+				})
+		</script>
+        <div class="rightcolumn">
+            <div class="top">
+            	<span></span>
+                <img src="images/partB-pic3.png">
+            </div>
+            <img class="middleline2" src="images/middleline2.png">
+            <dl>
+                <dt class="dt1">最新用户评价</dt>
+            </dl>
+            <ul class="one">
+                <li><a href="#">慧卓企业管理顾问...</a></li>
+                <li><a href="#">现代卓越</a></li>
+                <li><a href="#">汇聚华商管理顾问...</a></li>
+                <li><a href="#">许氏企业管理顾问...</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">5分</a></li>
+                <li><a href="#">4.7分</a></li>
+                <li><a href="#">4.9分</a></li>
+                <li><a href="#">4.6分</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">来自：碧海蓝天...</a></li>
+                <li><a href="#">来自：shar...</a></li>
+                <li><a href="#">来自：yyes</a></li>
+                <li><a href="#">来自：辰麻麻</a></li>
+            </ul>
+            <dl>
+                <dt class="dt2"><a href="#">more>></a></dt>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+        <script>
+		$(".partB .rightcolumn").mouseenter(function(){
+			$(this).addClass("show").siblings("").removeClass("show")
+			}).mouseleave(function(){
+				$(this).removeClass("show")
+				})
+
+		$(".partB .top span").hide()
+		$(".partB .top").mouseenter(function(){
+			$(this).children("span").show()
+			}).mouseleave(function(){
+				$(this).children("span").hide()
+				})
+		</script>
+        <div class="clearfix"></div>
+        <img class="leftarrow" src="images/leftarrow.png">
+        <img class="rightarrow" src="images/rightarrow.png">
+    </div>
+    <div class="partN">
+        <img class="toppic" src="images/partN.png">
+        <div class="person1">
+        	<img class="bg-circle" src="images/bg-circle.png">
+            <img src="images/liaodan.png">
+            <script>
+			$(".person1 img:first").hide()
+			$(".person1 img").mouseenter(function(){
+				$(".person1 img:first").show()
+				}).mouseleave(function(){
+					$(".person1 img:first").hide()
+					})
+			</script>
+            <dl>
+                <dt class="liaodan"><a href="#">廖丹</a></dt>
+                <dd class="p1"><a href="#">近10年世界500强管理经验</a></dd>
+                <dd class="p2"><a href="#">著名财经学家</a></dd>
+            </dl>
+        </div>
+        <div class="person2">
+       		<img class="bg-circle" src="images/bg-circle.png">
+            <img src="images/dongyuchuan.png">
+            <script>
+			$(".person2 img:first").hide()
+			$(".person2 img").mouseenter(function(){
+				$(".person2 img:first").show()
+				}).mouseleave(function(){
+					$(".person2 img:first").hide()
+					})
+			</script>
+            <dl>
+                <dt class="dongyuchuan"><a href="#">董玉川</a></dt>
+                <dd class="p1"><a href="#">高能高效人才</a></dd>
+                <dd class="p2"><a href="#">培育专家</a></dd>
+            </dl>
+        </div>
+        <div class="person3">
+        	<img class="bg-circle" src="images/bg-circle.png">
+            <img src="images/sunhanqing.png">
+            <script>
+			$(".person3 img:first").hide()
+			$(".person3 img").mouseenter(function(){
+				$(".person3 img:first").show()
+				}).mouseleave(function(){
+					$(".person3 img:first").hide()
+					})
+			</script>
+            <dl>
+                <dt class="sunhanqing"><a href="#">孙汗青</a></dt>
+                <dd class="p1"><a href="#">TTT管理技能</a></dd>
+                <dd class="p2"><a href="#">培训专家</a></dd>
+            </dl>
+        </div>
+        <div class="person4">
+        	<img class="bg-circle" src="images/bg-circle.png">
+            <img src="images/wangdebao.png">
+            <script>
+			$(".person4 img:first").hide()
+			$(".person4 img").mouseenter(function(){
+				$(".person4 img:first").show()
+				}).mouseleave(function(){
+					$(".person4 img:first").hide()
+					})
+			</script>
+            <dl>
+                <dt class="wangdebao"><a href="#">王德宝</a></dt>
+                <dd class="p1"><a href="#">办公效率</a></dd>
+                <dd class="p2"><a href="#">提升训练专家</a></dd>
+            </dl>
+        </div>
+        <div class="person5">
+        	<img class="bg-circle" src="images/bg-circle.png">
+            <img src="images/lijiangtao.png">
+             <script>
+			$(".person5 img:first").hide()
+			$(".person5 img").mouseenter(function(){
+				$(".person5 img:first").show()
+				}).mouseleave(function(){
+					$(".person5 img:first").hide()
+					})
+			</script>
+            <dl>
+                <dt class="lijiangtao"><a href="#">李江涛</a></dt>
+                <dd class="p1"><a href="#">平台化战略</a></dd>
+                <dd class="p2"><a href="#">互联网战略</a></dd>
+            </dl>
+        </div><div class="clearfix"></div>
+    </div>
+    <div class="partP" style="position:relative;">
+    	<img class="toppic" src="images/partP.png">
+        <div class="column1">
+        	<div class="top1">
+                <div class="redbg"></div>
+                <img src="images/partppic1.png">
+            </div>
+            <dl class="form">
+            	<dt><a class="titlefont" href="#">我是买家</a></dt>
+                <dd><a class="boldfont" href="#">找课程：</a></dd>
+                <dd><a class="normalfont" href="#">找公开课，找内训课</a></dd>
+                <dd><a class="boldfont" href="#">找资源：</a></dd>
+                <dd><a class="normalfont" href="#">找培训资源，找培训场地</a></dd>
+            </dl>
+            <h1><a class="normalfont" href="#">more >></a></h1>
+        </div>
+        <div class="column2">
+            <dl class="form">
+            	<dt><a class="titlefont" href="#">我是买家</a></dt>
+                <dd><a class="boldfont" href="#">找课程：</a></dd>
+                <dd><a class="normalfont" href="#">找公开课，找内训课</a></dd>
+                <dd><a class="boldfont" href="#">找资源：</a></dd>
+                <dd><a class="normalfont" href="#">找培训资源，找培训场地</a></dd>
+            </dl>
+            <h1><a class="normalfont" href="#">more >></a></h1>
+            <div class="top1">
+                <div class="redbg" style="top:11px;"></div>
+                <img src="images/partppic2.png">
+            </div>
+        </div>
+        <div class="column3">
+        	<div class="top1">
+                <div class="redbg"></div>
+                <img src="images/partppic3.png">
+            </div>
+            <dl class="form">
+            	<dt><a class="titlefont" href="#">我是机构</a></dt>
+                <dd><a class="boldfont" href="#">招生宝：</a></dd>
+                <dd><a class="normalfont" href="#">机构推广服务，提高公开课招生</a></dd>
+                <dd><a class="boldfont" href="#">注册推广：</a></dd>
+                <dd><a class="normalfont" href="#">免费注册，发布课程，寻找讲师</a></dd>
+            </dl>
+            <h1><a class="normalfont" href="#">more >></a></h1>
+        </div>
+        <div class="column4">
+            <dl class="form">
+            	<dt><a class="titlefont" href="#">我是助理</a></dt>
+                <dd><a class="boldfont" href="#">助理宝：</a></dd>
+                <dd><a class="normalfont" href="#">高效助理讲师，轻松做好电商</a></dd>
+                <dd><a class="boldfont" href="#">找讲师：</a></dd>
+                <dd><a class="normalfont" href="#">找可助理的讲师</a></dd>
+            </dl>
+            <h1><a class="normalfont" href="#">more >></a></h1>
+            <div class="top1">
+                <div class="redbg" style="top:11px;"></div>
+                <img src="images/partppic4.png">
+            </div>
+        </div>
+        <script>
+		$(".partP .top1 .redbg").hide()
+		$(".partP .top1").mouseenter(function(){
+			$(this).children(".redbg").show()
+			}).mouseleave(function(){
+				$(this).children(".redbg").hide()
+				})
+		</script>
+        <img src="images/leftarrow.png" style="position:absolute; top:355px; left:115px;">
+        <img src="images/grayarrow.png" style="position:absolute; top:355px; right:115px;">
+    </div>
+    <div class="partT" style="position:relative;">
+    	<img class="toppic" src="images/partT.png">
+        <div class="group1">
+        	<div class="top2">
+            	<div class="partttbg"></div>
+            </div>
+            <dl>
+            	<dd class="grouptitle"><a class="grouptitlefont1" href="#">昆山玉荣国际大酒店会议厅</a></dd>
+                <dd><a href="#">外观气势轩昂，主体结构12层，有大小会议室，其中大型豪华会议室可接纳260人会议、其余会议...</a></dd>
+                <dd class="groupbottom"><a class="groupbottomfont" href="#">more >></a></dd>
+            </dl>
+        </div>
+        <div class="group2">
+        	<div class="top2">
+            	<div class="partttbg"></div>
+            </div>
+        	<dl>
+            	<dd class="grouptitle"><a class="grouptitlefont1" href="#">济南银座佳悦酒店会议室</a></dd>
+                <dd><a href="#">酒店的会议设施及设备优越：酒店6间会议厅及多功能厅，从47平方米到575平方米，确保满足各...</a></dd>
+                <dd class="groupbottom"><a class="normalfont" href="#">more >></a></dd>
+            </dl>
+        </div>
+        <div class="group3">
+        	<div class="top2">
+            	<div class="partttbg"></div>
+            </div>
+        	<dl>
+            	<dd class="grouptitle"><a class="grouptitlefont1" href="#">沈阳丽都索菲特酒店会议厅</a></dd>
+                <dd><a href="#">饭店配备了最新技术和视听设备的多功能会议室和商务中心可容纳 600 名宾客。 酒店的专业会...</a></dd>
+                <dd class="groupbottom"><a class="groupbottomfont1" href="#">more >></a></dd>
+            </dl>
+        </div>
+        <div class="group4">
+        	<div class="top2">
+            	<div class="partttbg"></div>
+            </div>
+        	<dl>
+            	<dd class="grouptitle"><a class="grouptitlefont1" href="#">上海蒲公英会议中心</a></dd>
+                <dd><a href="#">由德必与蒲公英会议合作建设的蒲公英会议中心，坐落于大宁德必易园内，是具有国际水准的高档…</a></dd>
+                <dd class="groupbottom"><a class="normalfont" href="#">more >></a></dd>
+            </dl>
+        </div>
+        <script>
+		$(".partT .top2 .partttbg").hide()
+		$(".partT .top2").mouseenter(function(){
+			$(this).children(".partttbg").show()
+			}).mouseleave(function(){
+				$(this).children(".partttbg").hide()
+				})
+		</script>
+    </div>
+    <div class="partC">
+    	<img class="toppic" src="images/partC.png">
+        <ul>
+        	<li class="tele">服务热线：</li>
+            <li class="tele1">021-51061698</li><div class="clearfix"></div>
+        </ul>
+    </div>
+    <div class="footer">
+   		<div class="leftbox">
+            <input class="btn1" type="text" value="您的姓名：">
+            <input class="btn1" type="text" value="您的电话：">
+            <input class="btn1" type="text" value="您的邮箱：">
+            <textarea style="height:135px; width:448px; display:block; margin-bottom:3px;"></textarea>
+            <input class="btn5" type="submit" value="提交">
+        </div>
+        <div class="rightbox" >
+        	<img src="images/logo-white.png">
+            <ul class="insidebox">
+            	<li class="add">地址：上海市徐汇区宜山路889号齐来大厦6楼 邮编：200233</li>
+                <li class="tel">电话：+021-51061698</li>
+                <li class="fax">传真：+021-54012899</li>
+            </ul>
+            <div class="picbox">
+            	<img src="images/footerQQ.png">
+                <img src="images/footerwechat.png">
+                <img src="images/footerzone.png">
+                <img src="images/footerrenren.png">
+                <img src="images/footerdouban.png">
+                <img src="images/footersina.png">
+            </div><div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>
